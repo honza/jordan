@@ -1,6 +1,9 @@
 Jordan
 ======
 
+Jordan is a Clojure library for Compojure that allows you to specify which
+routes require the user to be logged in or to be an administrator.
+
 > He lay flat on the brown, pine-needled floor of the forest, his chin on his
 > folded arms, and high overhead the wind blew in the tops of the pine trees.
 > The mountainside sloped gently where he lay; but below it was steep and he
@@ -10,8 +13,10 @@ Jordan
 >
 > --- For Whom The Bell Tolls, Ernest Hemingway
 
-Jordan is a Clojure library for Compojure that allows you to specify which
-routes require the user to be logged in or to be an administrator.
+Installation
+------------
+
+Clojars, coming soon
 
 Usage
 -----
