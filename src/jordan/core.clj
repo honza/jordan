@@ -8,7 +8,8 @@
   (get-in req [:user :admin]))
 
 (defn default-not-found [req]
-  "404")
+  {:status 404
+   :body "Not found"})
 
 (def logged-in-fn (atom logged-in?))
 (def admin-fn     (atom admin?))
