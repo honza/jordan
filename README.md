@@ -20,7 +20,11 @@ Jordan is a replacement for libraries like [friend][1].
 Installation
 ------------
 
-Clojars, coming soon
+Clojars:
+
+``` clojure
+[jordan "0.1.0"]
+```
 
 Usage
 -----
