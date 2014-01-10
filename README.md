@@ -10,10 +10,14 @@ Jordan
 >
 > --- For Whom The Bell Tolls, Ernest Hemingway
 
-Jordan is a Clojure authentication of web requests.
+Jordan is a Clojure library for Compojure that allows you to specify which
+routes require the user to be logged in or to be an administrator.
 
 Usage
 -----
+
+Jordan gives you two macros for protecting your routes: `with-loging-required`
+and `with-admin-required`.
 
 ``` clojure
 
@@ -24,6 +28,26 @@ Usage
   (with-admin-required
     (GET "/admin/" req "<h1>hello admin</h1>"))))
 
+```
+
+### How does Jordan check if a user is logged in?
+
+By default, Jordan checks if the current request map includes a truthy `:user`
+key.  You can of course specify your own function.
+
+``` clojure
+;; Always true
+(reset! jordan.core.logged-in-fn (fn [req] true))
+```
+
+### How does Jordan check if a user is an admin?
+
+By default, Jordan checks if the current request map includes a truthy `:admin`
+key inside the `:user` object.  You can of course specify your own function.
+
+``` clojure
+;; Always true
+(reset! jordan.core.admin-fn (fn [req] true))
 ```
 
 License
