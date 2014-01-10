@@ -12,6 +12,20 @@ Jordan
 
 Jordan is a Clojure authentication of web requests.
 
+Usage
+-----
+
+``` clojure
+
+(defroutes routes
+  (GET "/" req"<h1>hello</h1>")
+  (with-login-required
+    (GET "/account/" req "<h1>hello logged in user</h1>"))
+  (with-admin-required
+    (GET "/admin/" req "<h1>hello admin</h1>"))))
+
+```
+
 License
 -------
 
