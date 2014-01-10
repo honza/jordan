@@ -58,6 +58,15 @@ key inside the `:user` object.  You can of course specify your own function.
 (reset! jordan.core.admin-fn (fn [req] true))
 ```
 
+### How can I customize the error page?
+
+Easy
+
+``` clojure
+;; Always true
+(reset! jordan.core.default-404 (fn [req] {:status 404}))
+```
+
 License
 -------
 
