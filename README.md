@@ -21,10 +21,13 @@ Clojars, coming soon
 Usage
 -----
 
-Jordan gives you two macros for protecting your routes: `with-loging-required`
+Jordan gives you two macros for protecting your routes: `with-login-required`
 and `with-admin-required`.
 
 ``` clojure
+
+(ns xyz.core
+  (:require [jordan.core :refer [with-login-required with-admin-required]]))
 
 (defroutes routes
   (GET "/" req"<h1>hello</h1>")
