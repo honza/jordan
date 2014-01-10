@@ -63,7 +63,6 @@ key inside the `:user` object.  You can of course specify your own function.
 Easy
 
 ``` clojure
-;; Always true
 (reset! jordan.core.default-404 (fn [req] {:status 404}))
 ```
 
