@@ -35,7 +35,7 @@ and `with-admin-required`.
 ``` clojure
 
 (ns xyz.core
-  (:require [jordan.core :refer [with-login-required with-admin-required]]))
+  (:require [jordan.core :refer :all]))
 
 (defroutes routes
   (GET "/" req"<h1>hello</h1>")
@@ -53,7 +53,7 @@ key.  You can of course specify your own function.
 
 ``` clojure
 ;; Always true
-(reset! jordan.core.logged-in-fn (fn [req] true))
+(reset! logged-in-fn (fn [req] true))
 ```
 
 ### How does Jordan check if a user is an admin?
@@ -63,7 +63,7 @@ key inside the `:user` object.  You can of course specify your own function.
 
 ``` clojure
 ;; Always true
-(reset! jordan.core.admin-fn (fn [req] true))
+(reset! admin-fn (fn [req] true))
 ```
 
 ### How can I customize the error page?
@@ -71,7 +71,7 @@ key inside the `:user` object.  You can of course specify your own function.
 Easy
 
 ``` clojure
-(reset! jordan.core.default-404 (fn [req] {:status 404}))
+(reset! default-404 (fn [req] {:status 404}))
 ```
 
 License
