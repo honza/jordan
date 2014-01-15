@@ -23,7 +23,7 @@ Installation
 Clojars:
 
 ``` clojure
-[jordan "0.1.0"]
+[jordan "0.1.1"]
 ```
 
 Usage

@@ -1,4 +1,4 @@
-(defproject jordan "0.1.0"
+(defproject jordan "0.1.1"
   :description ""
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.5.1"]]
