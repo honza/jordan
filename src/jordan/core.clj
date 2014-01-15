@@ -23,6 +23,6 @@
 
 (defmacro with-admin-required [expr]
   (let [[method path req & body] expr]
-    `(~method ~path ~req (if (@admin? ~req)
+    `(~method ~path ~req (if (@admin-fn ~req)
                            ~@body
                            (@default-404 ~req)))))
