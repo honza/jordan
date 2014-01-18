@@ -6,8 +6,6 @@ routes require the user to be logged in or to be an administrator.
 
 Jordan is a replacement for libraries like [friend][1].
 
-[1]: https://github.com/cemerick/friend
-
 > He lay flat on the brown, pine-needled floor of the forest, his chin on his
 > folded arms, and high overhead the wind blew in the tops of the pine trees.
 > The mountainside sloped gently where he lay; but below it was steep and he
@@ -46,6 +44,8 @@ and `with-admin-required`.
 
 ```
 
+For a real world example, check out [ansel][2] the self-hosted photo gallery.
+
 ### How does Jordan check if a user is logged in?
 
 By default, Jordan checks if the current request map includes a truthy `:user`
@@ -78,3 +78,6 @@ License
 -------
 
 BSD, short and sweet
+
+[1]: https://github.com/cemerick/friend
+[2]: https://github.com/honza/ansel
