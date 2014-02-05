@@ -15,14 +15,20 @@
 (def admin-fn     (atom admin?))
 (def default-404  (atom default-not-found))
 
-(defmacro with-login-required [expr]
-  (let [[method path req & body] expr]
-    `(~method ~path ~req (if (@logged-in-fn ~req)
-                           ~@body
-                           (@default-404 ~req)))))
+(defn with-login-required* [handler]
+  (fn [req]
+    (if (@logged-in-fn req)
+      (handler)
+      (@default-404 req))))
 
-(defmacro with-admin-required [expr]
-  (let [[method path req & body] expr]
-    `(~method ~path ~req (if (@admin-fn ~req)
-                           ~@body
-                           (@default-404 ~req)))))
+(defmacro with-login-required [& body]
+  `(with-login-required* (fn [] ~@body)))
+
+(defn with-admin-required* [handler]
+  (fn [req]
+    (if (@admin-fn req)
+      (handler)
+      (@default-404 req))))
+
+(defmacro with-admin-required [& body]
+  `(with-admin-required* (fn [] ~@body)))

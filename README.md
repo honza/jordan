@@ -21,7 +21,7 @@ Installation
 Clojars:
 
 ``` clojure
-[jordan "0.1.1"]
+[jordan "0.2.0"]
 ```
 
 Usage
@@ -37,10 +37,10 @@ and `with-admin-required`.
 
 (defroutes routes
   (GET "/" req"<h1>hello</h1>")
-  (with-login-required
-    (GET "/account/" req "<h1>hello logged in user</h1>"))
-  (with-admin-required
-    (GET "/admin/" req "<h1>hello admin</h1>"))))
+  (GET "/account/" req
+    (with-login-required "<h1>hello logged in user</h1>"))
+  (GET "/admin/" req
+    (with-admin-required "<h1>hello admin</h1>")))
 
 ```
 
