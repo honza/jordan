@@ -1,4 +1,4 @@
-(defproject jordan "0.2.0"
+(defproject jordan "0.2.1"
   :description ""
   :url "https://github.com/honza/jordan"
   :dependencies [[org.clojure/clojure "1.5.1"]]
