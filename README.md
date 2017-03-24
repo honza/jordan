@@ -18,11 +18,7 @@ Jordan is a replacement for libraries like [friend][1].
 Installation
 ------------
 
-Clojars:
-
-``` clojure
-[jordan "0.2.1"]
-```
+[![Clojars Project](http://clojars.org/jordan/latest-version.svg)](http://clojars.org/jordan)
 
 Usage
 -----
